@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
 group 'com.fast'
@@ -10,9 +11,16 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework:spring-context:5.3.8'
-    testImplementation 'org.springframework:spring-test:5.3.8'
+    // was에 앱을 올리기 위해 필요한 의존성 추가
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 
+    // web-mvc는 spring-context를 포함하고 있다.
+    // https://mvnrepository.com/artifact/org.springframework/spring-webmvc
+    implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.14'
+
+
+    testImplementation 'org.springframework:spring-test:5.3.8'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
