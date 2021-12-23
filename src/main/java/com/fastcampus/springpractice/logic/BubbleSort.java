@@ -1,9 +1,13 @@
-package com.fastcampus.javaoop;
+package com.fastcampus.springpractice.logic;
+
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BubbleSort<T extends Comparable<T>> {
+// bean으로 등록하는 anno
+@Component("bbSort")
+public class BubbleSort<T extends Comparable<T>> implements Sort<T>{
 	public List<T> sort(List<T> input) {
 		List<T> output = new ArrayList<>(input);
 		for (int i = output.size() - 1; i > 0; i--) {

@@ -1,10 +1,14 @@
-package com.fastcampus.javaoop;
+package com.fastcampus.springpractice.logic;
+
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class JavaSort <T extends Comparable<T>>{
+// bean으로 등록하는 anno
+@Component("jSort")
+public class JavaSort <T extends Comparable<T>> implements Sort<T>{
 	public List<T> sort(List<T> input){
 		List<T> output = new ArrayList<>(input);
 		Collections.sort(output);

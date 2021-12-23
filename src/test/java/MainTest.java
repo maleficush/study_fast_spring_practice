@@ -8,6 +8,11 @@ class MainTest {
 
 	@Test
 	void main() {
+		// [ Given ]
+		String[] args = {"3", "2", "1"};
+
+		// [ when & Then]
+		Main.main(args);
 
 	}
 }
